@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menstrual Tracker</title>
+</head>
+<body>
+  <h1>Menstrual Tracker</h1>
+
+  <label for="user-id">User ID:</label>
+  <input type="text" id="user-id" placeholder="Enter your user ID"><br><br>
+
+  <label for="test-date">Test Date:</label>
+  <input type="date" id="test-date"><br><br>
+
+  <button onclick="logStatus('period')">I have period</button>
+  <button onclick="logStatus('no_period')">I don't have period</button>
+
+  <p id="message"></p>
+  <p id="gemini-response" style="font-style: italic; color: green;"></p>
+
+  <script>
+    async function logStatus(status) {
+      const userId = document.getElementById('user-id').value.trim();
+      const date = document.getElementById('test-date').value;
+
+      if (!userId) {
+        alert("Please enter your User ID.");
+        return;
+      }
+
+      const response = await fetch('/log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          status: status,
+          date: date
+        })
+      });
+
+      const result = await response.json();
+      document.getElementById('message').innerText = result.message;
+      document.getElementById('gemini-response').innerText = result.gemini_response || '';
+    }
+  </script>
+
+  <h2>Ask the AI</h2>
+
+  <textarea id="user-message" rows="4" cols="50" placeholder="Type your question here..."></textarea><br>
+  <button onclick="sendMessage()">Send</button>
+
+  <p><strong>AI Response:</strong></p>
+  <p id="chat-response" style="font-style: italic;"></p>
+
+  <script>
+    async function sendMessage() {
+      const userId = document.getElementById('user-id').value.trim();
+      const message = document.getElementById('user-message').value;
+
+      if (!userId) {
+        alert("Please enter your User ID.");
+        return;
+      }
+
+      const response = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          message: message
+        })
+      });
+
+      const result = await response.json();
+      document.getElementById('chat-response').innerText = result.response || 'No response';
+    }
+  </script>
+</body>
+</html>

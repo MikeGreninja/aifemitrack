@@ -1,0 +1,224 @@
+{
+  "entries": [
+    {
+      "date": "2025-05-19",
+      "status": "period"
+    },
+    {
+      "date": "2025-05-20",
+      "status": "period"
+    },
+    {
+      "date": "2025-05-21",
+      "status": "period"
+    },
+    {
+      "date": "2025-05-22",
+      "status": "period"
+    },
+    {
+      "date": "2025-05-23",
+      "status": "period"
+    },
+    {
+      "date": "2025-05-24",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-25",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-26",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-27",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-28",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-29",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-30",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-05-31",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-01",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-02",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-03",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-04",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-05",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-06",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-07",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-08",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-09",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-10",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-11",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-12",
+      "status": "period"
+    },
+    {
+      "date": "2025-06-13",
+      "status": "period"
+    },
+    {
+      "date": "2025-06-14",
+      "status": "period"
+    },
+    {
+      "date": "2025-06-15",
+      "status": "period"
+    },
+    {
+      "date": "2025-06-16",
+      "status": "period"
+    },
+    {
+      "date": "2025-06-17",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-18",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-19",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-20",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-21",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-22",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-23",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-24",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-25",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-26",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-27",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-28",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-29",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-06-30",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-01",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-02",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-03",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-04",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-05",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-06",
+      "status": "no_period"
+    },
+    {
+      "date": "2025-07-07",
+      "status": "period"
+    }
+  ],
+  "cycles": [
+    {
+      "start": "2025-05-19",
+      "end": "2025-06-11",
+      "period_days": 5,
+      "total_days": 24
+    },
+    {
+      "start": "2025-06-12",
+      "end": "2025-07-06",
+      "period_days": 5,
+      "total_days": 25
+    }
+  ],
+  "current_cycle": [
+    {
+      "date": "2025-07-07",
+      "status": "period"
+    }
+  ]
+}
