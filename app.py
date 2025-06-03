@@ -9,8 +9,15 @@ from firebase_admin import credentials, firestore
 app = Flask(__name__)
 
 # Firebase setup
-cred = credentials.Certificate('serviceAccount.json')
-firebase_admin.initialize_app(cred)
+import json
+import os
+from firebase_admin import credentials, initialize_app
+
+firebase_creds_json = os.environ.get('FIREBASE_CREDS')
+firebase_creds = json.loads(firebase_creds_json)
+cred = credentials.Certificate(firebase_creds)
+initialize_app(cred)
+
 db = firestore.client()
 
 GEMINI_API_KEY = 'AIzaSyAKujRs-zZ6HeGLK9sqCqz-tvFBd6ZgEFw'
