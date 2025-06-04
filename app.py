@@ -15,8 +15,14 @@ from firebase_admin import credentials, initialize_app
 
 firebase_creds_json = os.environ.get('FIREBASE_CREDS')
 firebase_creds = json.loads(firebase_creds_json)
+
+# Convert escaped newlines in private_key to actual newlines
+if 'private_key' in firebase_creds:
+    firebase_creds['private_key'] = firebase_creds['private_key'].replace('\\n', '\n')
+
 cred = credentials.Certificate(firebase_creds)
 initialize_app(cred)
+
 
 db = firestore.client()
 
