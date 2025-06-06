@@ -65,8 +65,9 @@ def log_day():
         if any(e['status'] == 'no_period' for e in current_cycle):
             # Previous cycle has ended
             last_cycle = current_cycle
-            period_days = sum(1 for e in last_cycle if e['status'] == 'period')
-            total_days = len(last_cycle)
+            period_days = sum(1 for e in last_cycle if isinstance(e, dict) and e.get('status') == 'period')
+            total_days = len([e for e in last_cycle if isinstance(e, dict)])
+
 
             if total_days > 0:
                 cycle_info = {
