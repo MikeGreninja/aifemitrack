@@ -82,7 +82,7 @@ def log_day():
                 past_cycles = list(cycles_ref.order_by('start').stream())
                 if len(past_cycles) >= 2:
                     prev_cycle = past_cycles[-2].to_dict()
-                    gemini_response = send_to_gemini(prev_cycle)
+                    gemini_response = send_to_gemini([prev_cycle])
 
             # Start a new cycle with current entry
             current_cycle = [entry]
