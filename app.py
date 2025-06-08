@@ -39,16 +39,17 @@ def log_day():
     custom_date = request.json.get('date')
 
     if custom_date:
-       try:
-        parsed_date = datetime.strptime(custom_date, '%m/%d/%Y')
-       except ValueError:
         try:
-            parsed_date = datetime.strptime(custom_date, '%Y-%m-%d')
+            parsed_date = datetime.strptime(custom_date, '%m/%d/%Y')
         except ValueError:
-            return jsonify({'message': 'Invalid date format. Use MM/DD/YYYY or YYYY-MM-DD'}), 400
+            try:
+                parsed_date = datetime.strptime(custom_date, '%Y-%m-%d')
+            except ValueError:
+                return jsonify({'message': 'Invalid date format. Use MM/DD/YYYY or YYYY-MM-DD'}), 400
         today = parsed_date.strftime('%Y-%m-%d')
     else:
         today = datetime.now().strftime('%Y-%m-%d')
+
 
 
     user_ref = db.collection('users').document(user_id)
