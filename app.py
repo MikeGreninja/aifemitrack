@@ -39,16 +39,30 @@ def log_day():
     custom_date = request.json.get('date')
 
     if custom_date:
+        parsed_date = None
+        accepted_formats = [
+        '%Y-%m-%d',     # 2025-06-09
+        '%m/%d/%Y',     # 06/09/2025
+        '%-m/%-d/%Y',   # 6/9/2025 (Linux/Mac only, will be skipped on Windows)
+        '%m-%d-%Y',     # 06-09-2025
+        '%m/%d/%y',     # 06/09/25
+        '%Y/%m/%d',     # 2025/06/09
+    ]
+
+    for fmt in accepted_formats:
         try:
-            parsed_date = datetime.strptime(custom_date, '%m/%d/%Y')
+            parsed_date = datetime.strptime(custom_date, fmt)
+            break
         except ValueError:
-            try:
-                parsed_date = datetime.strptime(custom_date, '%Y-%m-%d')
-            except ValueError:
-                return jsonify({'message': 'Invalid date format. Use MM/DD/YYYY or YYYY-MM-DD'}), 400
+            continue
+
+    if not parsed_date:
+        return jsonify({'message': f'Invalid date format. Provided: {custom_date}'}), 400
+
         today = parsed_date.strftime('%Y-%m-%d')
     else:
         today = datetime.now().strftime('%Y-%m-%d')
+
 
 
 
